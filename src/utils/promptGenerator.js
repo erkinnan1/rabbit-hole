@@ -1,30 +1,54 @@
-export const prompts = {
-    initialPrompt: (topic) => `Generate 3-5 really interesting things about "${topic}" that a user can learn about. For each interesting thing, provide a brief outline. Your response should be in the following format:
+const difficultyLevels = {
+    simple: "Explain this to an 8th grader",
+    intermediate: "Explain this to a college student",
+    complex: "Explain this to a PhD candidate"
+  };
   
-  1. [Interesting Thing 1]
-     - Brief outline point 1
-     - Brief outline point 2
-     - Brief outline point 3
+  export const prompts = {
+    initialPrompt: (topic, difficulty) => `Generate 3-5 interesting aspects about "${topic}". For each aspect:
+  1. Provide a short, catchy title (2-3 words max).
+  2. ${difficultyLevels[difficulty]} in a 300-450 word explanation using LaTeX format.
+  3. Suggest 2 related topics for further exploration.
   
-  2. [Interesting Thing 2]
-     - Brief outline point 1
-     - Brief outline point 2
-     - Brief outline point 3
+  Format the response as a valid JSON object with the following structure:
+  {
+    "aspect1": {
+      "title": "Short Title",
+      "content": "Markdown formatted content. Use ** for bold, * for italic, and standard Markdown syntax for headers, lists, etc. For mathematical equations, use single $ for inline and $$ for display equations.",
+      "suggestions": ["Topic 1", "Topic 2"]
+    },
+    "aspect2": {
+      "title": "Another Title",
+      "content": "More Markdown formatted content...",
+      "suggestions": ["Topic 3", "Topic 4"]
+    }
+  }
   
-  ... and so on.
+  IMPORTANT: Your entire response must be a valid JSON object. Do not include any text before or after the JSON object. Ensure all keys and values are properly quoted and formatted according to JSON standards.`,
   
-  Be creative and try to cover diverse aspects of the topic that might surprise or intrigue the user.`,
-  
-    tabContentPrompt: (topic, outlinePoint) => `Provide an in-depth exploration of the following aspect of "${topic}":
+    tabContentPrompt: (topic, outlinePoint, difficulty) => `Provide an in-depth exploration of the following aspect of "${topic}":
   
   ${outlinePoint}
   
-  Your response should be comprehensive and engaging. Don't constrain the length - cover the topic thoroughly. Include relevant examples, historical context, current applications, and future implications where appropriate.`,
+  ${difficultyLevels[difficulty]} in a 200-300 word response. Format your response in LaTeX, including equations, lists, and emphasis where appropriate. Include relevant examples, historical context, current applications, and future implications.
   
-    newPromptsGenerator: (tabContent) => `Based on the following content about a topic, generate 2 new interesting subject prompts that a user might want to explore next. These should be related but not directly covered in the given content. Your response should be brief and to the point, just listing the two new prompts.
+  Format the response as a valid JSON object with the following structure:
+  {
+    "title": "Short Title",
+    "content": "More Markdown formatted content...",
+    "suggestions": ["Topic 1", "Topic 2"]
+  }
+  
+  IMPORTANT: Your entire response must be a valid JSON object. Do not include any text before or after the JSON object. Ensure all keys and values are properly quoted and formatted according to JSON standards.`,
+  
+    newPromptsGenerator: (tabContent) => `Based on the following content about a topic, generate 2 new interesting subject prompts that a user might want to explore next. These should be related but not directly covered in the given content. Your response should be a valid JSON object with the following structure:
+  
+  {
+    "suggestions": ["New Topic 1", "New Topic 2"]
+  }
   
   Content:
   ${tabContent}
   
-  Generate 2 new interesting subject prompts:`
+  IMPORTANT: Your entire response must be a valid JSON object. Do not include any text before or after the JSON object. Ensure all keys and values are properly quoted and formatted according to JSON standards.`
   };

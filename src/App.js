@@ -8,7 +8,7 @@ function App() {
     <LearningProvider>
       <div className="App">
         <header className="App-header">
-          <h1>Rabbit Hole Learning</h1>
+          <h1>Rabbithole.ai</h1>
         </header>
         <main>
           <RabbitHole />

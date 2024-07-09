@@ -1,52 +1,78 @@
-.App {
-  text-align: center;
-  font-family: Arial, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
 
-.App-header {
-  background-color: #282c34;
-  padding: 20px;
-  color: white;
-}
-
-main {
-  padding: 20px;
-}
-
-.rabbit-hole {
+body {
+  font-family: 'Merriweather', serif;
+  line-height: 1.6;
+  color: #333;
   max-width: 800px;
   margin: 0 auto;
+  padding: 20px;
 }
 
-input[type="text"] {
+.rabbit-hole input[type="text"] {
   width: 70%;
   padding: 10px;
   margin-right: 10px;
+  font-size: 16px;
 }
 
-button {
+.rabbit-hole button {
   padding: 10px 20px;
-  background-color: #61dafb;
+  font-size: 16px;
+  background-color: #4a90e2;
+  color: white;
   border: none;
   cursor: pointer;
 }
 
-.topic-tab {
-  margin-top: 20px;
-  text-align: left;
-  border: 1px solid #ddd;
-  padding: 15px;
-  border-radius: 5px;
+.rabbit-hole button:hover {
+  background-color: #357abd;
 }
 
-.suggestions {
+.error-message {
+  color: red;
   margin-top: 10px;
 }
 
-.suggestion-button {
+.react-tabs__tab-list {
+  border-bottom: 1px solid #aaa;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.react-tabs__tab {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-bottom: none;
+  bottom: -1px;
+  position: relative;
+  list-style: none;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.react-tabs__tab--selected {
+  background: #fff;
+  border-color: #aaa;
+  color: black;
+  border-radius: 5px 5px 0 0;
+}
+
+.react-tabs__tab-panel {
+  display: none;
+}
+
+.react-tabs__tab-panel--selected {
+  display: block;
+}
+
+.suggestions {
+  margin-top: 20px;
+}
+
+.suggestions button {
   margin-right: 10px;
   margin-bottom: 10px;
-  background-color: #f0f0f0;
 }
 
 .loading-spinner {
@@ -57,8 +83,8 @@ button {
 }
 
 .spinner {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #3498db;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #000;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -66,6 +92,7 @@ button {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }

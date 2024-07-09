@@ -1,0 +1,117 @@
+.rabbit-hole-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rabbithole-logo {
+  height: 50px;
+  margin-right: 15px;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+  .rabbit-hole-header h1 {
+    margin-left: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+
+  .search-button:hover {
+    background-color: #3367d6;
+  }
+
+  .error-message {
+    color: #d32f2f;
+    margin-bottom: 20px;
+  }
+
+  .content-container {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    min-height: 200px;
+  }
+
+  .rabbit-hole {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .search-container {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: stretch;
+  }
+  
+  .topic-input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .difficulty-container {
+    position: relative;
+  }
+  
+  .difficulty-select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-left: none;
+    background-color: #f8f8f8;
+    cursor: pointer;
+  }
+  
+  .difficulty-tooltip {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: none;
+  }
+  
+  .difficulty-container:hover .difficulty-tooltip {
+    display: block;
+  }
+  
+  .search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .search-button:hover {
+    background-color: #3367d6;
+  }
+
+  /* Ensure proper spacing for LaTeX content */
+.tab-content p {
+  margin-bottom: 1em;
+}
+
+/* Style for bullet points */
+.tab-content ul {
+  padding-left: 20px;
+}
+
+/* Ensure KaTeX renders properly */
+.katex { font-size: 1em !important; }

@@ -10,9 +10,19 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "katex": "^0.16.11",
+    "lodash": "^4.17.21",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-latex": "^2.0.0",
+    "react-markdown": "^9.0.1",
     "react-scripts": "5.0.1",
+    "react-tabs": "^6.0.2",
+    "rehype-katex": "^7.0.0",
+    "remark-math": "^6.0.0",
     "styled-components": "^6.1.11",
     "web-vitals": "^2.1.4"
   },
@@ -20,7 +30,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "node server.js",
+    "dev": "concurrently \"npm run server\" \"npm start\""
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +51,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.24.7",
+    "concurrently": "^8.2.2"
   }
 }
